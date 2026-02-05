@@ -1,17 +1,17 @@
 <template>
-  <div :dark-theme="DarkTheme" class="root">
+  <div :class="[DarkTheme ? 'light-theme' : 'dark-theme']" class="root">
     <header class="header">
-      <AppHeader :dark-theme="DarkTheme" />
+      <AppHeader @theme-changed="themeColor" />
     </header>
     <div class="Main_body">
       <section class="content">
         <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">Main Page</h1>
         <ClickCounter @decrement="decrementHandler" :title="$options.title" />
       </section>
-      <section class="sidebar"><SideBar :dark-theme="DarkTheme" /></section>
+      <section class="sidebar"><SideBar /></section>
     </div>
     <!-- <footer class="footer">Footer {{ 2 * 2 }} {{ new Date().getFullYear() }}</footer> -->
-    <footer><AppFooter :dark-theme="DarkTheme" /></footer>
+    <footer><AppFooter /></footer>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default defineComponent({
   data() {
     return {
       isMainPageTitleGreen: false,
-      DarkTheme: false,
+      DarkTheme: true,
     }
   },
   title: 'Our counter title',
@@ -47,6 +47,9 @@ export default defineComponent({
       this.isMainPageTitleGreen = event < -5 ? true : false
       console.log('decrement-handler', event)
     },
+    themeColor() {
+      this.DarkTheme = !this.DarkTheme
+    },
   },
 })
 </script>
@@ -54,10 +57,10 @@ export default defineComponent({
 <style scoped>
 .light-theme {
   background-color: #ffffff;
-  color: #333333;
+  color: #726464;
 }
 .dark-theme {
-  background-color: #1a1a1a;
+  background-color: #726464;
   color: #f0f0f0;
 }
 .root {

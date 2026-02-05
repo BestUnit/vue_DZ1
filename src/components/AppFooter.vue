@@ -19,6 +19,6 @@ export default defineComponent({
 footer {
   display: flex;
   justify-content: center;
-  font-size: 32px;
+  font-size: 48px;
 }
 </style>

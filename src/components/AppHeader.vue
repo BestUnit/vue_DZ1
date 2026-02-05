@@ -1,7 +1,7 @@
 <template>
-  <Header>
+  <header >
     <h1>{{ title }}</h1>
-    <button @click="Theme">Dark/White</button>
+    <button @click="toggleTheme">Dark/White</button>
   </Header>
 </template>
 
@@ -23,7 +23,7 @@ export default defineComponent({
     },
   },
   methods: {
-    Theme() {
+    toggleTheme() {
       this.DarkTheme = !this.DarkTheme
       this.$emit('theme-changed', this.DarkTheme)
     },
@@ -39,9 +39,9 @@ header {
 }
 button {
   padding: 5px 10px;
-  border: none;
-  background-color: aqua;
+  border: 5px solid #111;
+  background-color: rgb(74, 80, 138);
   border-radius: 5px;
-  margin-right: 5px;
 }
+
 </style>
