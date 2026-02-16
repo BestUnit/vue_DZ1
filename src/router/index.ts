@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainVue from '@/views/MainVue.vue'
+import MainViewOptions from '@/views/MainViewOptions.vue'
+import MainViewComposition from '@/views/MainViewComposition.vue'
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +10,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: MainVue,
+      component: MainViewComposition,
+    },
+    {
+      path: '/options',
+      name: 'options',
+      component: MainViewOptions,
     },
     {
       path: '/about',

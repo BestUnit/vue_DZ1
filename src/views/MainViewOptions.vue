@@ -60,7 +60,7 @@ export default defineComponent({
   color: #726464;
 }
 .dark-theme {
-  background-color: #726464;
+  background-color: #1b1a1a;
   color: #f0f0f0;
 }
 .root {

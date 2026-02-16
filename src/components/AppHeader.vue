@@ -2,7 +2,7 @@
   <header >
     <h1>{{ title }}</h1>
     <button @click="toggleTheme">Dark/White</button>
-  </Header>
+  </header>
 </template>
 
 <script lang="ts">
